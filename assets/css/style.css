@@ -186,10 +186,19 @@ body{
 	line-height: 1.5em;
 }
 
+#wins{
+	width:50%;
+	float:left;
+}
+
 #wrongGuesses{
+	width:50%;
+	float:left;
+}
+
+footer{
 	margin-top:20px;
 	border-top: 1px solid #888;
-	text-align:center;
 	height:30px;
 	line-height: 30px;
 	font-weight:500;

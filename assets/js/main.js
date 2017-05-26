@@ -53,6 +53,8 @@ var msgField = document.querySelector("#messageField");
 var gameFooter = document.querySelector(".gameFooter");
 var lifeCount = document.querySelector("#lifeCount");
 var wrongLetters = document.querySelector("#wrongGuesses");
+var winsCount = document.querySelector("#wins");
+var wins = 0;
 
 // Initiate Game start
 startBtn.onclick =  function(){
@@ -67,6 +69,8 @@ function gameStart(){
 	var rightGuess = [];
 	var wrongGuess = [];
 	lifeCount.innerHTML = chances + " attempts left";
+	winsCount.innerHTML = "Wins: " + wins;
+	wrongLetters.innerHTML = "Wrong Guesses: " + wrongGuess;
 	// Pick random riddle from the array of objects.
 	var randRiddle = riddles[Math.floor(Math.random() * riddles.length)];
 	// Assign the selected riddles answer to a variable.
@@ -118,10 +122,14 @@ function gameStart(){
 						}
 						// If score matches the length of the answer, the player wins.
 						if (score === randAnswer.length){
+							wrongGuess.length = 0;
+							wrongLetters.innerHTML = "";
 							var newBtn = "<div class='btnWrap'><button id='playAgain' class='btn' autofocus>PLAY AGAIN</button></div>";
 							riddleWrap.innerHTML = "<p>YOU WIN!</p></br>" + newBtn;
+							wrongLetters.innerHTML = "Wrong Guesses: ";
 							var playAgain = document.querySelector("#playAgain");
 							playAgain.onclick =  function(){
+								wins++;
 								gameStart();
 							};
 						}
@@ -143,7 +151,10 @@ function gameStart(){
 					riddleWrap.innerHTML = "<p>YOU LOSE!</p></br>" + newBtn;
 					var tryAgain = document.querySelector("#tryAgain");
 					wrongGuess.length = 0;
-					wrongLetters.innerHTML = "";
+					wrongLetters.innerHTML = "Wrong Guesses: ";
+					document.onkeyup = function(event){
+						console.log("you lost");
+					};
 					tryAgain.onclick =  function(){
 						gameStart();
 					};
