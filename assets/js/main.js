@@ -52,6 +52,7 @@ var startBtn = document.querySelector("#startBtn");
 var msgField = document.querySelector("#messageField");
 var gameFooter = document.querySelector(".gameFooter");
 var lifeCount = document.querySelector("#lifeCount");
+var wrongLetters = document.querySelector("#wrongGuesses");
 
 // Initiate Game start
 startBtn.onclick =  function(){
@@ -64,6 +65,7 @@ function gameStart(){
 	var score = 0;
 	var chances = 7;
 	var rightGuess = [];
+	var wrongGuess = [];
 	lifeCount.innerHTML = chances + " attempts left";
 	// Pick random riddle from the array of objects.
 	var randRiddle = riddles[Math.floor(Math.random() * riddles.length)];
@@ -128,16 +130,20 @@ function gameStart(){
 
 			} else {
 				// Prevents the "attempts left" number from going into negatives. 
-				if(chances > 0){
+				if(chances > 0 && wrongGuess.indexOf(keyInput) === -1){
+					wrongGuess.push(keyInput);
 					// Decrease and the attempts left number and change the interface.
 					chances--;
 					lifeCount.innerHTML = chances + " attempts left";
+					wrongLetters.innerHTML = "Wrong Guesses: " + wrongGuess;
 				}
 				// If we reach 0 attempts left, the player loses.
 				if(chances == 0){
 					var newBtn = "<div class='btnWrap'><button id='tryAgain' class='btn' autofocus>TRY AGAIN</button></div>";
 					riddleWrap.innerHTML = "<p>YOU LOSE!</p></br>" + newBtn;
 					var tryAgain = document.querySelector("#tryAgain");
+					wrongGuess.length = 0;
+					wrongLetters.innerHTML = "";
 					tryAgain.onclick =  function(){
 						gameStart();
 					};

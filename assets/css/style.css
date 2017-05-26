@@ -57,7 +57,6 @@ body{
 
 #instructionsField{
 	margin-top:42px;
-	height:176px;
 	background: #ecf0f7;
 }
 
@@ -185,5 +184,14 @@ body{
 
 #instructionsField li{
 	line-height: 1.5em;
+}
+
+#wrongGuesses{
+	margin-top:20px;
+	border-top: 1px solid #888;
+	text-align:center;
+	height:30px;
+	line-height: 30px;
+	font-weight:500;
 }
 
