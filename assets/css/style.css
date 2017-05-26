@@ -1,0 +1,189 @@
+/*---------------------------/
+|         |
+| 		  |
+|		  0
+|		 /|\ 
+|		 / \
+|
+|   =============
+|	H*A*N*G*M*A*N
+|   =============
+|
+|  Code by Saveliy Samoylov
+/--------------------------*/
+
+/*--------------------------- Resources
+| http://www.cssmatic.com/gradient-generator
+
+/*--------------------------- General Styling
+*/
+
+*{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+body{
+	background: #5555ff;
+	font-family: "Raleway", "Arial", "Helvetica", "Helvetica Neue", sans-serif; 
+}
+
+.container{
+	margin:0 auto;
+	width:596px;
+	background:white;
+	padding:20px;
+}
+
+#gameField{
+	position:relative;
+	margin-top:42px;
+	height:306px;
+	color:#fff;
+	-webkit-box-shadow: 0px 5px 10px #0b2228;
+	box-shadow: 0px 5px 10px #0b2228;
+	background: #384180;
+	background: -moz-linear-gradient(top, #384180 0%, #384180 24%, #0c2856 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, #384180), color-stop(24%, #384180), color-stop(100%, #0c2856));
+	background: -webkit-linear-gradient(top, #384180 0%, #384180 24%, #0c2856 100%);
+	background: -o-linear-gradient(top, #384180 0%, #384180 24%, #0c2856 100%);
+	background: -ms-linear-gradient(top, #384180 0%, #384180 24%, #0c2856 100%);
+	background: linear-gradient(to bottom, #384180 0%, #384180 24%, #0c2856 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#384180', endColorstr='#0c2856', GradientType=0 );
+}
+
+#instructionsField{
+	margin-top:42px;
+	height:176px;
+	background: #ecf0f7;
+}
+
+.gameHeader{
+	border-bottom:1px solid #ccc;
+	overflow:hidden;
+	padding:0 0 15px;
+}
+
+.gameHeader img{
+	float:left;
+}
+
+.gameHeader h1{
+	float:left;
+	font-weight:700;
+	margin-left:20px;
+}
+
+#lifeCount{
+	float:right;
+}
+
+#messageField{
+	padding-bottom: 30px;
+	text-align:center;
+	font-weight:700;
+	margin-top:50px;
+	line-height: 1.2em;
+}
+
+.gameFooter{
+	position: absolute;
+	bottom:0;
+	left:0;
+	width:100%;
+	height:80px;
+}
+
+.btnWrap{
+	position:relative;
+	margin:auto;
+	width:140px;
+}
+
+.btn{
+	position: relative;
+	width:140px;
+	padding:10px;
+	border-radius: 6px;
+	border:none;
+	color:#fff;
+	font-weight:700;
+	font-size:12px;
+	padding:15px 25px;
+	outline: none;
+	cursor:pointer;
+}
+
+.btn:active{
+	top:3px;
+	border-bottom-width: 1px;
+}
+
+#startBtn{
+	background:#48ba22;
+	border-bottom:3px solid #008000;
+	-webkit-box-shadow: 0px 0px 7px #080d1c;
+	box-shadow: 0px 0px 7px #080d1c;
+}
+
+#startBtn:hover{
+	background: #44b020;
+}
+
+#playAgain{
+	background: #ff145d;
+	border-bottom:3px solid #800019;
+	-webkit-box-shadow: 0px 0px 7px #080d1c;
+	box-shadow: 0px 0px 7px #080d1c;
+}
+
+#tryAgain{
+	background: #ff145d;
+	border-bottom:3px solid #800019;
+	-webkit-box-shadow: 0px 0px 7px #080d1c;
+	box-shadow: 0px 0px 7px #080d1c;
+}
+
+.wordWrap{
+	position:relative;
+	width:55%;
+	margin:auto;
+	height:47px;
+	background:rgba(215, 227, 244, .1);
+	border-radius: 6px;
+	text-align:center;
+	color: rgba(255, 255, 255, 1);
+	font-weight:700;
+	line-height: 47px;
+}
+
+.mask{
+	border-bottom: 1px solid #ffffff;
+	padding:0 8px;
+	margin:0px 5px;
+}
+
+.unMask{
+	border-bottom: 1px solid #ffffff;
+	padding:0 3px;
+	margin:0 5px;
+}
+
+
+
+.riddleWrap li{
+	list-style: none;
+}
+
+#instructionsField h3{
+	font-weight: 500;
+	padding-bottom: 20px;
+}
+
+#instructionsField li{
+	line-height: 1.5em;
+}
+
